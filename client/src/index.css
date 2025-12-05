@@ -27,6 +27,8 @@ body {
   height: 100%;
 }
 
+/* HEADER */
+
 header {
   width: 100%;
   background: var(--bg-card);
@@ -70,11 +72,12 @@ nav a:hover {
   color: var(--accent);
 }
 
-/* 🔥 Aktif link için stil */
 nav a.active-link {
   color: var(--accent);
   font-weight: 600;
 }
+
+/* PAGE */
 
 .page {
   max-width: 900px;
@@ -91,11 +94,7 @@ nav a.active-link {
   margin-bottom: 1.5rem;
 }
 
-.page-lead {
-  font-size: 1.15rem;
-  margin-bottom: 1.3rem;
-  color: var(--text-muted);
-}
+/* HERO */
 
 .heroTitle {
   font-size: 2.4rem;
@@ -131,50 +130,39 @@ nav a.active-link {
   background: #3a6cd6;
 }
 
-/* about */
-
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 2.2rem;
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
-}
-
-.about-photo {
-  width: 230px;
-  height: 230px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
-  border: 2px solid rgba(255, 255, 255, 0.15);
-}
-
-.about-text {
-  flex: 1;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #e6e6e6;
-}
+/* MOBILE HEADER */
 
 @media (max-width: 768px) {
-  .about-container {
+  header {
+    position: static;
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
+    padding: 0.6rem 1rem;
+    gap: 0.4rem;
   }
 
-  .about-photo {
-    width: 200px;
-    height: 200px;
+  .logoArea {
+    margin-bottom: 0.4rem;
   }
 
-  .about-text {
-    text-align: center;
+  header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .page {
+    padding-top: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
-/* projects */
+/* PROJECTS */
 
 .project-list {
   display: grid;
@@ -218,7 +206,7 @@ nav a.active-link {
   line-height: 1.55;
 }
 
-/* services */
+/* SERVICES */
 
 .servicesList {
   display: grid;
@@ -236,23 +224,7 @@ nav a.active-link {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.serviceCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.55);
-}
-
-.serviceCard h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.6rem;
-}
-
-.serviceCard p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-/* contact */
+/* CONTACT */
 
 .contact-layout {
   display: flex;
@@ -262,7 +234,7 @@ nav a.active-link {
   flex-wrap: wrap;
 }
 
-.contact-info {
+.contact-info-box {
   background: var(--bg-card);
   border-radius: 12px;
   border: 1px solid #262626;
@@ -274,7 +246,7 @@ nav a.active-link {
   color: var(--text-muted);
 }
 
-.contact-info h3 {
+.contact-info-box h3 {
   font-size: 1.2rem;
   margin-bottom: 0.7rem;
   color: var(--text-light);
@@ -299,11 +271,6 @@ nav a.active-link {
   gap: 0.3rem;
 }
 
-.form-row label {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
 .contact-form input,
 .contact-form textarea {
   padding: 0.6rem 0.7rem;
@@ -311,13 +278,6 @@ nav a.active-link {
   border: 1px solid #333;
   background-color: #111;
   color: var(--text-light);
-  font-size: 0.95rem;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: 1px solid var(--accent);
-  border-color: var(--accent);
 }
 
 .contact-btn {
@@ -330,13 +290,60 @@ nav a.active-link {
     flex-direction: column;
   }
 
-  .contact-info,
+  .contact-info-box,
   .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-btn {
+    align-self: center;
+  }
+}
+
+/* EDUCATION */
+
+.edu-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.7rem;
+}
+
+.edu-card-full {
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid #262626;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+  padding: 1.2rem 1.5rem;
+  max-width: 650px;
+}
+
+.edu-card-full h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-light);
+}
+
+.edu-card-full p {
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+  color: var(--text-muted);
+}
+
+.edu-desc {
+  margin-top: 0.6rem;
+  color: #e5e5e5;
+  line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+  .edu-card-full {
     max-width: 100%;
   }
 }
 
-/* footer */
+/* FOOTER */
+
 .footer {
   width: 100%;
   text-align: center;
@@ -348,7 +355,6 @@ nav a.active-link {
   margin-top: 1rem;
 }
 
-/* STICKY FOOTER LAYOUT */
 .layoutWrapper {
   min-height: 100%;
   display: flex;
