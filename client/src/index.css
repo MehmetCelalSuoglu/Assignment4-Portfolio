@@ -130,6 +130,33 @@ nav a.active-link {
   background: #3a6cd6;
 }
 
+/* about */
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.about-photo {
+  width: 230px;
+  height: 230px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e6e6e6;
+}
+
 /* MOBILE HEADER */
 
 @media (max-width: 768px) {
