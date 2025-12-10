@@ -3,14 +3,29 @@ import errorHandler from "./error.controller.js";
 
 // Create
 const create = async (req, res) => {
-  const edu = new Education(req.body);
   try {
+    console.log("📩 Incoming education body:", req.body);
+
+    const edu = new Education({
+      institution: req.body.institution,
+      program: req.body.program,
+      years: req.body.years,
+      description: req.body.description,
+    });
+
     await edu.save();
-    return res.status(200).json({ message: "Education created successfully!" });
+
+    return res
+      .status(200)
+      .json({ message: "Education created successfully!", edu });
   } catch (err) {
-    return res.status(400).json({ error: errorHandler.getErrorMessage(err) });
+    console.error("❌ Education create error:", err);
+    return res
+      .status(400)
+      .json({ error: errorHandler.getErrorMessage(err) });
   }
 };
+
 
 // List all
 const list = async (req, res) => {
