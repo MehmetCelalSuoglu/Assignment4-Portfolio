@@ -1,19 +1,4 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
+/* App.css */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -32,9 +17,12 @@ h1 {
   padding: 0;
 }
 
-.home-page, .about-page, .contact-page,
-.education-page, .project-page, .services-page {
+.home-page,
+.about-page,
+.contact-page,
+.education-page,
+.project-page,
+.services-page {
   padding: 2rem;
   text-align: center;
 }
-

@@ -3,7 +3,9 @@
   --bg-card: #1a1a1a;
   --text-light: #ffffff;
   --text-muted: #cccccc;
-  --accent: #4f8cff;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
 }
 
 * {
@@ -27,7 +29,7 @@ body {
   height: 100%;
 }
 
-/* HEADER */
+/* Header */
 
 header {
   width: 100%;
@@ -72,12 +74,17 @@ nav a:hover {
   color: var(--accent);
 }
 
+nav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 nav a.active-link {
   color: var(--accent);
   font-weight: 600;
 }
 
-/* PAGE */
+/* Page */
 
 .page {
   max-width: 900px;
@@ -94,7 +101,7 @@ nav a.active-link {
   margin-bottom: 1.5rem;
 }
 
-/* HERO */
+/* Hero */
 
 .heroTitle {
   font-size: 2.4rem;
@@ -117,7 +124,7 @@ nav a.active-link {
 
 .btn {
   background: var(--accent);
-  color: white;
+  color: #ffffff;
   padding: 0.7rem 1.3rem;
   border-radius: 8px;
   border: none;
@@ -127,14 +134,19 @@ nav a.active-link {
 }
 
 .btn:hover {
-  background: #3a6cd6;
+  background: var(--accent-hover);
 }
 
-/* ABOUT – foto üstte, yazı kart içinde */
+.btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* About */
 
 .about-container {
   display: flex;
-  flex-direction: column;          /* her zaman dikey: foto üstte */
+  flex-direction: column;          
   align-items: center;
   gap: 1.3rem;
   max-width: 900px;
@@ -165,7 +177,7 @@ nav a.active-link {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
 }
 
-/* MOBILE HEADER */
+/* Mobile header */
 
 @media (max-width: 768px) {
   header {
@@ -209,7 +221,7 @@ nav a.active-link {
   }
 }
 
-/* PROJECTS */
+/* Projects */
 
 .project-list {
   display: grid;
@@ -253,7 +265,7 @@ nav a.active-link {
   line-height: 1.55;
 }
 
-/* SERVICES */
+/* Services */
 
 .servicesList {
   display: grid;
@@ -271,7 +283,7 @@ nav a.active-link {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* CONTACT */
+/* Contact */
 
 .contact-layout {
   display: flex;
@@ -347,7 +359,7 @@ nav a.active-link {
   }
 }
 
-/* EDUCATION */
+/* Education */
 
 .edu-wrapper {
   display: flex;
@@ -389,7 +401,7 @@ nav a.active-link {
   }
 }
 
-/* FOOTER */
+/* footer */
 
 .footer {
   width: 100%;
