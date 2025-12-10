@@ -36,6 +36,18 @@ const uploadsPath = path.join(__dirname, 'uploads')
 
 app.use('/uploads', express.static(uploadsPath))
 
+// robots.txt
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send(
+    [
+      'User-agent: *',
+      'Allow: /'
+    ].join('\n')
+  );
+});
+
+
 app.use('/', authRoutes)
 app.use('/', userRoutes)
 app.use('/', contactRoutes)
