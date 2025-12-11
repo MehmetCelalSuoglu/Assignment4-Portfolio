@@ -423,3 +423,222 @@ nav a.active-link {
 .content {
   flex: 1;
 }
+
+/* SuogluAI Chat  */
+
+/* Floating round button */
+.suogluai-launcher {
+  position: fixed;
+  right: 60px;
+  bottom: 70px;
+  z-index: 1100;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.suogluai-launcher:hover {
+  transform: translateY(-2px);
+  background: var(--accent-hover);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.85);
+}
+
+.suogluai-launcher-icon {
+  font-size: 1.6rem;
+}
+
+/* Chat card container – matches dark theme cards */
+.suogluai-chat {
+  position: fixed;
+  right: 24px;
+  bottom: 70px;
+  width: 380px;
+  max-width: calc(100vw - 32px);
+  height: 480px;
+  background: var(--bg-card);
+  border-radius: 18px;
+  border: 1px solid #262626;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1100;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.85);
+}
+
+/* Header */
+.suogluai-chat-header {
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #262626;
+  background: #151515;
+}
+
+.suogluai-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.suogluai-robot-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.suogluai-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.suogluai-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.suogluai-close-btn {
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Messages area */
+.suogluai-messages {
+  flex: 1;
+  padding: 0.9rem 0.9rem 0.6rem;
+  background: #111111;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+/* Message bubbles */
+.suogluai-message {
+  max-width: 80%;
+  padding: 0.55rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.suogluai-bot {
+  align-self: flex-start;
+  background: #262626;
+  color: var(--text-light);
+}
+
+.suogluai-user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.suogluai-message-text {
+  white-space: pre-wrap;
+}
+
+/* Input area */
+.suogluai-input-area {
+  padding: 0.65rem 0.75rem;
+  border-top: 1px solid #262626;
+  background: #151515;
+  display: flex;
+  gap: 0.45rem;
+}
+
+.suogluai-input {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid #333;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.86rem;
+  outline: none;
+  background: #0f0f0f;
+  color: var(--text-light);
+}
+
+.suogluai-input:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
+}
+
+.suogluai-send-btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.86rem;
+  cursor: pointer;
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.suogluai-send-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Typing indicator */
+.suogluai-typing {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.suogluai-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #9ca3af;
+  animation: suogluai-bounce 1s infinite ease-in-out;
+}
+
+.suogluai-typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.suogluai-typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes suogluai-bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .suogluai-chat {
+    right: 12px;
+    bottom: 84px;
+    width: calc(100vw - 24px);
+    height: 430px;
+  }
+
+  .suogluai-launcher {
+    right: 12px;
+    bottom: 16px;
+  }
+}

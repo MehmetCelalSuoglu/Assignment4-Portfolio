@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import Logo from "../src/assets/LogoMCS.jpeg";
+import SuogluAIChat from "./SuogluAIChat.jsx";
 
 export default function Layout() {
   const location = useLocation();
@@ -22,7 +23,7 @@ export default function Layout() {
     <div className="layoutWrapper">
       <header>
         <div className="logoArea">
-          <img src={Logo} alt="logo" />
+          <img src={Logo} alt="Mehmet Celal Suoglu logo" />
           <h2>Mehmet Celal Suoglu</h2>
         </div>
 
@@ -50,7 +51,7 @@ export default function Layout() {
             <Link className={isActive("/profile")} to="/profile">
               Profile
             </Link>
-          )}    
+          )}
 
           {isAdmin && (
             <Link className={isActive("/admin")} to="/admin">
@@ -68,7 +69,7 @@ export default function Layout() {
               </Link>
             </>
           )}
-         
+
           {isLoggedIn && (
             <button
               onClick={handleLogout}
@@ -84,6 +85,9 @@ export default function Layout() {
       <main className="content">
         <Outlet />
       </main>
+
+      {/* SuogluAI Assistant chat widget (floating bottom-right) */}
+      <SuogluAIChat />
 
       <footer className="footer">
         <p>Copyright © Mehmet Celal Suoglu, 301442929, COMP229, 2025</p>
