@@ -22,6 +22,10 @@ export default function About() {
             like MongoDB and Oracle SQL. My background in econometrics helps me think analytically and solve
             real-world problems using data and software.
           </p>
+
+          <p style={{ marginTop: "20px", color: "#9fb3c8" }}>
+            This paragraph was added as part of the CI/CD demonstration for COMP229 Assignment 4.
+          </p>
         </div>
       </div>
     </section>
